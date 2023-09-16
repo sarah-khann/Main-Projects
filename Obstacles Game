@@ -1,0 +1,153 @@
+#Sarah Khan
+#Game Creation Project
+#Mrs. Navarra
+#Thank you so mycg for being such a great, and kind teacher!! I enjoyed this course so much
+
+import random
+import pygame
+
+#initializing pygame, so anything that is inside of pygame module is running 
+pygame.init()
+
+# game constants, as well as the colours being used for the program
+white = (255, 255, 255)
+black = (0, 0, 0)
+red = (255, 0, 0)
+blue = (0, 0, 255)
+yellow = (255, 255, 0)
+magenta = (255, 0, 255)
+green = (0, 255, 0)
+WIDTH = 600
+HEIGHT = 300
+
+# game variables 
+score = 0
+player_x = 50
+player_y = 200
+y_change = 0
+gravity = 1
+x_change = 0
+enemies = [300, 450, 600]
+enemies_speed = 2
+active = False 
+
+#creating the background colour and name for the game
+screen = pygame.display.set_mode([450, 300])
+pygame.display.set_caption("Run! Created by Sarah")
+#background = black
+
+#importing image for background
+background_1 = pygame.image.load('space2.png')
+fps = 60
+font = pygame.font.Font('freesansbold.ttf', 16)
+timer = pygame.time.Clock()
+
+#this was me uploading the image but it didn't work out
+#birdImg = pygame.image.load('tweety.png')
+#tweetyBird = pygame.transform.scale(birdImg, (50, 50))
+
+
+running = True
+
+while running:
+  timer.tick(fps)
+
+  #colour for background that's black
+  screen.fill((0, 0, 0))
+
+  #adding in the background
+  screen.blit(background_1, (0, 0))
+
+  #writing out the instructions for the player and making sure they disappear once the game begins 
+  if not active:
+
+    instructions_text = font.render(f' Press Space Bar to Begin!', True, white, black)
+
+    #positioning of the instructions text 
+    screen.blit(instructions_text, (140, 50))
+
+    #writing out instructions
+    instructions_text = font.render(f'Space Bar Jumps, Press Left/Right Keys to Move', True, white, black)
+    
+    #positioning the instructions text
+    screen.blit(instructions_text, (50, 65))
+
+  #writing out score   
+  score_text = font.render(f'Score: {score}', True, white, black)
+  
+  #positioning score text
+  screen.blit(score_text, (160, 250))
+
+  #creating the floor of the game 
+  floor = pygame.draw.rect(screen, white, [0, 220, WIDTH, 5])
+
+  #character for the main player 
+  player = pygame.draw.rect(screen, magenta, [player_x, player_y, 20, 20])
+  
+  # honestly i definitely tried my best to implement a character, but somehow it just wasn't working, i commented it just in case just to show you my thought process :) 
+  #player = tweetyBird, ([player_x, player_y, 20, 20])
+  #screen.blit(tweetyBird, (player_x, player_y))  
+  
+  #the obstacles for the game 
+  enemies0 = pygame.draw.rect(screen, green, [enemies[0], 200, 20, 20])
+  enemies1 = pygame.draw.rect(screen, blue, [enemies[1], 200, 20, 20])
+  enemies2 = pygame.draw.rect(screen, yellow, [enemies[2], 200, 20, 20])
+
+  #when the player dies, it restarts the game when you press the spacebar 
+  for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+      running = False 
+
+    if event.type == pygame.KEYDOWN and not active:
+      if event.key == pygame.K_SPACE:
+        enemies = [300, 450, 600]
+        player_x = 50
+        score = 0
+        
+        active = True 
+      
+    #using keys so the character can move and jump 
+    if event.type == pygame.KEYDOWN and active:
+      if event.key == pygame.K_SPACE and y_change == 0:
+        y_change = 18
+      if event.key == pygame.K_RIGHT:
+        x_change = 2
+      if event.key == pygame.K_LEFT:
+        x_change = -2 
+    if event.type == pygame.KEYUP:
+      if event.key == pygame.K_RIGHT:
+        x_change = 0
+      if event.key == pygame.K_LEFT:
+        x_change = 0 
+
+#if we hit an enemy it stops the game and allows it to start over
+  for i in range(len(enemies)):
+    if active:
+      enemies[i] -= enemies_speed
+      if enemies[i] < -20:
+        enemies[i] = random.randint(470, 570)
+        score += 1
+      if player.colliderect(enemies0) or player.colliderect(enemies1) or player.colliderect(enemies2):
+        active = False
+
+  #these conditions make sure the playerr stays within the screen
+  if 0 <= player_x <= 230:
+    player_x += x_change
+  if player_x < 0:
+    player_x = 0
+  if player_x > 430:
+    player_x = 430
+
+  #making sure when character jumps it doesn't exceed the height of the screen and while jumping we're subtracting gravity
+  # and if in an instance it goes below the floor it'll bring it back to the floor
+  if y_change > 0 or player_y < 200:
+    player_y -= y_change
+    y_change -= gravity
+  if player_y >200:
+    player_y = 200
+  if player_y == 200 and y_change <0:
+    y_change = 0
+
+   #displaying the game 
+  pygame.display.flip()
+pygame.quit()
