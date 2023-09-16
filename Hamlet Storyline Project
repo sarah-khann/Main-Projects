@@ -1,0 +1,89 @@
+//Englishhhh project 
+//sarah khan 
+
+import java.util.*;
+class Main {
+  public static void main(String[] args) {
+
+    Scanner scan = new Scanner(System.in);
+System.out.println("Hello there. Are you ready to take on the life of Hamlet?  Make your decisions carefully, there’s no going back! Type yes if you're ready for this challenge.");
+
+    String input = scan.nextLine();
+
+    if (input.equals("yes")) {
+        System.out.println("ACT 1 - Your dear friend Horatio as well as 2 guards have  just witnessed the ghost of your recently deceased father. As for your role as Hamlet, do you support his decision of choosing to see the ghost for himself, or would you choose differently?");
+
+System.out.println("Please indicate your answer in letter form");
+System.out.println("A if you want to see the ghost");
+System.out.println("B if you want to ignore this news");
+
+    String input1 = scan.nextLine();
+    if (input1.equals("A")) {
+System.out.println("Alright, you believe that the ghost of your father is roaming the grounds of the palace. You start asking questions… But those questions remain unanswered as the excitement of the chance to speak to your father bubbles inside of you. Maybe this is when you can finally uncover the truth. Or confirm your potential suspicions.");
+System.out.println("Now what is it you would like to do?");
+System.out.println("A Hear what the ghost has to say");
+System.out.println("B Dismiss the fact there is a ghost");
+      
+String input9 = scan.nextLine();   
+    if (input9.equals("A")) {
+        System.out.println("You demand an answer from the ghost as to what it wanted. What could it possibly want? Suddenly it spoke and the words that rang in your ears took the life out of you. Your stomach dropped and your whole world felt as if it were coming down in pieces bit by bit. You found out who your father’s killer was.");
+        System.out.println("Now you take a breath to take in what you’ve just heard. Your uncle Claudius, your father’s brother, and your mother’s now husband, killed your dear father, the King.");
+       System.out.println("Your father’s ghost speaks once again and makes it clear he wants you to take revenge against this despicable being of a human. Your emotions take the best of you and end up instantly agreeing in anger and pain, but have no idea what’s in store for you in this crazy one of a kind journey.");
+  System.out.println("Congratulations! For a while you took on the daring role as Hamlet and made some very important decisions. So once again, congrats for getting through it and I hope you enjoyed the chance at making Hamlet’s decisions!");
+        
+      } else if (input9.equals("B")){
+         System.out.println("You're walking down one of the hallways of your majestic castle and suddenly you feel the hairs on the back of your neck stand. A shiver ran down your spine like cold trickling water. You brush off the weird feeling as nothing, perhaps something you ate making you feel queasy. But little did you know that there was something…or someone behind your notions. Suddenly, the flames on the hallway torches went out, accompanying a cool, but eerie breeze.");
+   System.out.println("In the darkness, you began to makeout a weirdly familiar figure with a glow of light. It couldn't be your father’s ghost Horatio saw, could it? As it neared where you were standing, your gut feeling confirmed that it was your father’s ghost. Nothing could’ve prepared you for this moment. The shock made it hard to push out the words to say and when the ghost of your father started speaking, your world felt upside down. It felt unnatural. You’re taken aback by this news, or really the delivery platform of this news. Your uncle Claudius, your father’s brother, and your mother’s now husband, killed your dear father, the King.");
+    System.out.println("Were you hallucinating? Was it too much wine? Well now you’re wondering Hamlet, is your father trying to haunt you? Did you do something wrong to upset him? Or is it all just a phooey coincidence, a mind game, a play of emotions. You take in the fact that it was possible Claudius killed your father, but there was no else to confirm that you heard the ghost say anything at all. You consider that you’re hearing things but you decide to think about this situation after with all the facts in order to make sure you don’t make a decision you might regret.");
+
+System.out.println("Now, type END to end your journey as Hamlet.");
+
+String input21 = scan.nextLine();
+    if (input21.equals("END")){
+System.out.println("Congratulations! For a while you took on the daring role as Hamlet and made some very important decisions. So once again, congrats for getting through it and I hope you enjoyed the chance at making Hamlet’s decisions!");
+    }
+        
+  }
+       }else if (input1.equals("B")){
+      System.out.println("You feel that it was not possible that Horatio had seen the ghost of your father and that it was absolutely ridiculous. You think that you must have to see it to believe it for yourself. You poke Horatio to summon his so-called ghost. Horatio was dumbstruck that his best friend didn't believe his groundbreaking news. There wasn’t a way he thought he could bring the ghost in front of him. It simply was a fluke he saw it in the first place.");
+System.out.println("Well Hamlet, you’ve ignored the groundbreaking news of the fact that a ghost of your father was seen by Horatio. But, ignoring others’ words doesn’t stop reality from showing itself.");
+System.out.println("While you were alone walking through the hallways, suddenly you felt the presence of someone behind you. You could see a dark shadow in your peripheral vision and feel your heart start to race. A rush of adrenaline pumping through your body. As you slowly turn around, you realize it was nothing but the wind moving the long, dark curtains. You take a breath of relief and turn to make your way out. But, the sigh of relief quickly turned into an air of shock when…the ghost of your father stood in front of you. ");
+System.out.println("Would you like to…");
+System.out.println("A Hear what the ghost has to say");
+System.out.println("B Dismiss the fact there is a ghost"); 
+      
+  String input2 = scan.nextLine();   
+    if (input2.equals("A")) {
+        System.out.println("You demand an answer from the ghost as to what it wanted. What could it possibly want? Suddenly it spoke and the words that rang in your ears took the life out of you. Your stomach dropped and your whole world felt as if it were coming down in pieces bit by bit. You found out who your father’s killer was.");
+        System.out.println("Now you take a breath to take in what you’ve just heard. Your uncle Claudius, your father’s brother, and your mother’s now husband, killed your dear father, the King.");
+       System.out.println("Your father’s ghost speaks once again and makes it clear he wants you to take revenge against this despicable being of a human. Your emotions take the best of you and end up instantly agreeing in anger and pain, but have no idea what’s in store for you in this crazy one of a kind journey.");
+  System.out.println("Congratulations! For a while you took on the daring role as Hamlet and made some very important decisions. So once again, congrats for getting through it and I hope you enjoyed the chance at making Hamlet’s decisions!");
+        
+      } else if (input2.equals("B")){
+         System.out.println("You're walking down one of the hallways of your majestic castle and suddenly you feel the hairs on the back of your neck stand. A shiver ran down your spine like cold trickling water. You brush off the weird feeling as nothing, perhaps something you ate making you feel queasy. But little did you know that there was something…or someone behind your notions. Suddenly, the flames on the hallway torches went out, accompanying a cool, but eerie breeze.");
+   System.out.println("In the darkness, you began to makeout a weirdly familiar figure with a glow of light. It couldn't be your father’s ghost Horatio saw, could it? As it neared where you were standing, your gut feeling confirmed that it was your father’s ghost. Nothing could’ve prepared you for this moment. The shock made it hard to push out the words to say and when the ghost of your father started speaking, your world felt upside down. It felt unnatural. You’re taken aback by this news, or really the delivery platform of this news. Your uncle Claudius, your father’s brother, and your mother’s now husband, killed your dear father, the King.");
+    System.out.println("Were you hallucinating? Was it too much wine? Well now you’re wondering Hamlet, is your father trying to haunt you? Did you do something wrong to upset him? Or is it all just a phooey coincidence, a mind game, a play of emotions. You take in the fact that it was possible Claudius killed your father, but there was no else to confirm that you heard the ghost say anything at all. You consider that you’re hearing things but you decide to think about this situation after with all the facts in order to make sure you don’t make a decision you might regret.");
+
+System.out.println("Now, type END to end your journey as Hamlet.");
+
+    String input10 = scan.nextLine();
+    if (input10.equals("END")){
+      System.out.println("Congratulations! For a while you took on the daring role as Hamlet and made some very important decisions. So once again, congrats for getting through it and I hope you enjoyed the chance at making Hamlet’s decisions!");
+
+        
+      }
+     
+      }
+    
+    }
+
+    }
+      
+  }}
+
+
+  
+
+
+    
+  
